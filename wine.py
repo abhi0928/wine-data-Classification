@@ -37,9 +37,9 @@ train_l = train_set['quality']
 test_l = test_set['quality']
 
 from sklearn.preprocessing import StandardScaler
-sc = StandardScaler()
-train_f = sc.fit_transform(train_f)
-test_f = sc.transform(test_f)
+standard_scale = StandardScaler()
+train_f = standard_scale.fit_transform(train_f)
+test_f = standard_scale.transform(test_f)
 
 clf_RF = RandomForestClassifier(max_features = 'log2', n_estimators = 600)
 clf_RF.fit(train_f, train_l)
